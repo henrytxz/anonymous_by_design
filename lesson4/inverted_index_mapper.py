@@ -1,16 +1,16 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import sys
 import csv
 import string
 
-#def mapper():
+from strip_punctuation import strip_punctuation
+
+
+def mapper():
     
-if 1:
     reader = csv.reader(sys.stdin, delimiter='\t')
     writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
-
-    table = string.maketrans("","")
 
     for line in reader:
         
@@ -26,9 +26,11 @@ if 1:
 	print data
 	print len(data)
 
-	print body.translate(table,string.punctuation)
+	print strip_punctuation(body)
 
 #        minusLastChar = body.strip('"')[:-1]
 #        punctuations = minusLastChar.count(".")+minusLastChar.count("!")+minusLastChar.count("?") 
         #if punctuations < 1:
         #    writer.writerow(line)
+
+mapper()
