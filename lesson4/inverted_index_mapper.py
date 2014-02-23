@@ -15,22 +15,15 @@ def mapper():
     for line in reader:
         
         # YOUR CODE HERE
-        #print "line:"
-	#print  line
 	body = line[4]
-        #print "body:"
-	#print  body
 	
 	data = body.split()
 	#data = body.split("\s.!?:;\"()<>[]#$=-/")
-	print data
-	print len(data)
+	print body 
+
+#	print len(data)
 
 	print strip_punctuation(body)
 
-#        minusLastChar = body.strip('"')[:-1]
-#        punctuations = minusLastChar.count(".")+minusLastChar.count("!")+minusLastChar.count("?") 
-        #if punctuations < 1:
-        #    writer.writerow(line)
 
 mapper()
