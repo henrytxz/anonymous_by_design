@@ -1,3 +1,6 @@
 *.pyc
 *purchases.txt
 *access_log
+forum*tsv
+.*tsv
+*swp
