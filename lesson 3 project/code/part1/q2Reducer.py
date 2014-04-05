@@ -26,10 +26,8 @@ for line in sys.stdin:
         salesMax = 0
 
     oldKey = thisKey
-    #print "thisSale:", thisSale, ", salesMax:", salesMax
     if float(thisSale) > float(salesMax) :
-    #	print "thisSale:", thisSale, " > salesMax:", salesMax
-	salesMax = thisSale
+        salesMax = thisSale
 
 if oldKey != None:
     print oldKey, "\t", salesMax
