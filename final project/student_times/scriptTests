@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-cat testReducerInput.txt | reducer.py 
