@@ -1,7 +1,0 @@
-as I go from row to row
-	if node_type == 'question'
-		we've found a new key
-	#if node_type == 'comment'		skip it/do nothing
-	if node_type == 'answer'
-		find the key by using parent_id, update the average ans length
-		
