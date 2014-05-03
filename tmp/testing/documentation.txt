@@ -1,0 +1,5 @@
+short, medium and bigger_node_test.txt are subsets of the entire data
+
+may delete:
+textReducerInput.txt I don't remember
+user_test.txt don't remember a lot
