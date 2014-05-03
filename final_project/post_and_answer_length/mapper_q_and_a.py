@@ -4,12 +4,6 @@ import sys
 import csv
 import os
 
-#http://stackoverflow.com/questions/714063/python-importing-modules-from-parent-folder
-#http://stackoverflow.com/questions/9271464/what-does-the-file-wildcard-mean-do
-#parentDir = os.path.dirname(__file__)
-#sys.path.insert(0, parentDir)
-
-#from final_project 
 from skip_line import skip_line
 
 def mapper():
