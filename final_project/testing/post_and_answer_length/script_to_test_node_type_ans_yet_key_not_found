@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cat data/data_test_node_type_ans_yet_key_not_found.txt | ../../post_and_answer_length/mapper_q_and_a.py
+
+# expect output   

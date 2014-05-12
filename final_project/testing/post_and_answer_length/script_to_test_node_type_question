@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# run this from command line when in ~/Documents/GitHub/foo/final_project/testing/post_and_answer_length
+# run *question* to avoid typing the whole thing
+ 
+cat ../shared_data/short_node_test.txt | ../../post_and_answer_length/mapper_q_and_a.py
+
+# expect output   
+# {'5339': [0, 0, 0], '2312': [133, 0, 0]}
