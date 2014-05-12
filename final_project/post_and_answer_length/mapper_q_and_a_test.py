@@ -7,34 +7,38 @@ testing the following:
 '''
 import mapper_q_and_a
 import unittest
+import csv
 
-class mapper_q_and_a_test(unittest.TestCase):
+class mapper_q_and_a_test2(unittest.TestCase):
 	try:
 		f = open('../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt')
 	except IOError:
 		print "could not open file"
 	
-	f = open('../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt')
-	f.next()	#line 1: column headers
-	question_line0 = f.next()	#line 2	
-	question_line = question_line0.split('\t') 
-	f.next()	#line 3
-	ans_line_question_id_in_dict = f.next()
-	ans_line_non_int_question_id = f.next()
-	ans_line_negative_question_id = f.next()
-	ans_line_non_int_question_id = f.next()
+	question_line = None
+	
+	with open('../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt') as csvfile:
+		reader = csv.reader(csvfile, delimiter='\t')
+		reader.next()	#line 1: column headers
+		question_line = reader.next()
+	
+#	question_line0 = f.next()	#line 2	
+#	question_line = question_line0.split('\t') 
+#	f.next()	#line 3
+#	ans_line_question_id_in_dict = f.next()
+#	ans_line_non_int_question_id = f.next()
+#	ans_line_negative_question_id = f.next()
+#	ans_line_non_int_question_id = f.next()
 	
 	def test1(self):
-			
-#		print "file name:", f.name
-#		print "try f.next()"
-#		print f.next()
-		
 		d = {}
 		mapper_q_and_a.case_node_is_question(d, self.question_line)
 		print d
 		self.assertTrue(d.has_key(5339))
-		#value = d['5339']
+		value = d[5339]
+		self.assertEqual(10, value[0])
+		self.assertEqual(0, value[1])
+		self.assertEqual(0, value[2])
 		
 
 #	def testName(self):
