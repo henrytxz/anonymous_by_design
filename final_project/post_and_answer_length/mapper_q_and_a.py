@@ -5,8 +5,8 @@ import csv
 
 import skip_line
 
-def mapper():
-	reader = csv.reader(sys.stdin, delimiter='\t')
+def mapper(reader):
+	#reader = csv.reader(sys.stdin, delimiter='\t')
 
 	result = {}
 
@@ -30,10 +30,9 @@ def mapper():
 				if question_id in result:				
 					case_node_is_answer_and_question_id_in_dictionary(result, line, question_id)
 				else:
-					case_node_is_answer_and_question_id_not_yet_in_dictionary(result, line)
-					
+					case_node_is_answer_and_question_id_not_yet_in_dictionary(result, line)					
 	
-	print '-'*60			
+	#print '-'*60			
 	print result
 	
 def case_node_is_question(dictionary, line):
@@ -43,7 +42,8 @@ def case_node_is_question(dictionary, line):
 		ans_len_sum = 0
 		dictionary[question_id] = [question_len, number_of_ans, ans_len_sum]
 
-def case_node_is_answer_and_question_id_in_dictionary(dictionary, line, question_id):
+def case_node_is_answer_and_question_id_in_dictionary(dictionary, line):
+		question_id = int(line[6])
 		value = dictionary[question_id]	#print value
 		question_len = value[0]
 		number_of_ans = value[1]+1
@@ -51,7 +51,7 @@ def case_node_is_answer_and_question_id_in_dictionary(dictionary, line, question
 		dictionary[question_id] = [question_len, number_of_ans, ans_len_sum]	
 
 def case_node_is_answer_and_question_id_not_yet_in_dictionary(dictionary, line):
-		question_id = line[6]
+		question_id = int(line[6])
 		question_len = 0
 		number_of_ans = 1
 		ans_len_sum = len(line[4])
