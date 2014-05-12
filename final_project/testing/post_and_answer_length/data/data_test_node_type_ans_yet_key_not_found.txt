@@ -5,3 +5,5 @@
 "00"	"Mock up ans"	"no tag"	"no author_id"	"body: answer non_int_question_id"	"answer"	"deliberated not an integer"	""	""	""	""	""	""	""	""	""	""	""	""
 "000"	"Mock up ans"	"no tag"	"no author_id"	"body: answer negative question_id"	"answer"	"-1"	"just a comment saying that mapper_q_and_a.py handles negative numbers by using isdigit()"	""	""	""	""	""	""	""	""	""	""	""
 "0"	"Mock up ans"	"no tag"	"no author_id"	"body"	"answer"	"1234"	""	""	""	""	""	""	""	""	""	""	""	""
+"1234"	"Mock up question"	"no tag"	"no author_id"	"body of a random question"	"question"	"\N"	""	""	""	""	""	""	""	""	""	""	""	""
+"0"	"another mock up ans"	"no tag"	"no author_id"	"body abc"	"answer"	"1234"	""	""	""	""	""	""	""	""	""	""	""	""

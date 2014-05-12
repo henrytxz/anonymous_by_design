@@ -2,6 +2,8 @@
 testing the following:
 1. case_node_is_question inserts correct question_id, question_len, number_of_ans==0 and ans_len_sum==0 
    if seeing the question_id before an ans
+
+todo: to finish documenting
 2.
 				
 '''
@@ -9,13 +11,7 @@ import mapper_q_and_a
 import unittest
 import csv
 
-class mapper_q_and_a_test2(unittest.TestCase):
-	#try:
-	#	f = open('../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt')
-	#except IOError:
-	#	print "could not open file"
-	
-	#question5339 = None
+class mapper_q_and_a_test(unittest.TestCase):
 	
 	fileLocation = '../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt' 
 	
@@ -27,14 +23,12 @@ class mapper_q_and_a_test2(unittest.TestCase):
 		ans_whose_question_id_may_be_in_dict = reader.next()	#line 4
 		ans_non_int_question_id = reader.next()		#line 5
 		ans_negative_question_id = reader.next()	#line 6
-		
-#	question_line0 = f.next()	#line 2	
-#	question5339 = question_line0.split('\t') 
-#	f.next()	#line 3
-#	ans_line_question_id_in_dict = f.next()
-#	ans_line_non_int_question_id = f.next()
-#	ans_line_negative_question_id = f.next()
-#	ans_line_non_int_question_id = f.next()
+	
+	#def test_integration(self):	todo: solve ValueError: I/O operation on closed file
+	#	print "integration test:"
+	#	result = mapper_q_and_a.mapper(self.reader)
+	#	print result
+	#	print '-'*70
 	
 	def test1(self):
 		print 'test1:'

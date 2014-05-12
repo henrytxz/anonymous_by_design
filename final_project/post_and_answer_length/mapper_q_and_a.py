@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys
+#import sys
 import csv
 
 import skip_line
@@ -11,35 +11,36 @@ def mapper(reader):
 	result = {}
 
 	for line in reader:
+		#print line
 		#print len(line)
-		if skip_line(line, 19):
-		#if False:
+		if skip_line.skip_line(line, 19):
 			continue
 		else:
 			node_type = line[5]
-			#print node_type
 			
 			if node_type == 'question': 
 				case_node_is_question(result, line)
 					
 			if node_type == 'answer':
-				print "node_type is answer"
 				question_id = line[6]
 				if bad_question_id(question_id):
-					continue				
+					continue
+				question_id = int(question_id)
 				if question_id in result:				
-					case_node_is_answer_and_question_id_in_dictionary(result, line, question_id)
+					case_node_is_answer_and_question_id_in_dictionary(result, line)
 				else:
 					case_node_is_answer_and_question_id_not_yet_in_dictionary(result, line)					
 	
-	#print '-'*60			
-	print result
+	return result
 	
 def case_node_is_question(dictionary, line):
 		question_id = int(line[0])
 		question_len = len(line[4])
 		number_of_ans = 0
 		ans_len_sum = 0
+		if question_id in dictionary:
+			number_of_ans = dictionary[question_id][1]
+			ans_len_sum = dictionary[question_id][2]
 		dictionary[question_id] = [question_len, number_of_ans, ans_len_sum]
 
 def case_node_is_answer_and_question_id_in_dictionary(dictionary, line):
@@ -61,4 +62,7 @@ def bad_question_id(question_id):
 	return question_id.isdigit() == False	#this takes out letters and negative numbers ('-' is not a digit)
 		
 if __name__ == "__main__":		
-	mapper()
+	fileLocation = '../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt'
+	with open(fileLocation) as csvfile:
+		reader = csv.reader(csvfile, delimiter='\t')
+		mapper(reader)
