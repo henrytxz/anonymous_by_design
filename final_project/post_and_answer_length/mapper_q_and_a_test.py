@@ -72,7 +72,3 @@ class mapper_q_and_a_test(unittest.TestCase):
 	def test_bad_input2(self):
 		print "test_bad_input2:"
 		self.assertTrue(mapper_q_and_a.bad_question_id(self.ans_negative_question_id[6]))
-
-if __name__ == "__main__":
-	#import sys;sys.argv = ['', 'Test.testName']
-	unittest.main()

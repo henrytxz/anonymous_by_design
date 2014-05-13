@@ -28,7 +28,7 @@ def reducer():
 		
 		print questionId, "\t", aveAnsLength
 	
-	print '-'*70
+	#print '-'*70
 		
 def calcAveAnsLength(numberOfAns, sumOfAnsLength):
 	if numberOfAns == 0:
