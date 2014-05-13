@@ -6,7 +6,7 @@ import unittest
 import csv
 
 class mapper_q_and_a_integration_test(unittest.TestCase):
-	fileLocation = '../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt'
+	fileLocation = '../testing/post_and_answer_length/data/test_data.txt'
 	def test_integration(self):
 		print "integration test:"
 		with open(self.fileLocation) as csvfile:
