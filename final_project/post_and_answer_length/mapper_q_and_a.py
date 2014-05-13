@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-#import sys
+import sys
 import csv
 
 import skip_line
 
 def mapper(reader):
-	#reader = csv.reader(sys.stdin, delimiter='\t')
+	#print reader
 
 	result = {}
 
@@ -29,7 +29,10 @@ def mapper(reader):
 				if question_id in result:				
 					case_node_is_answer_and_question_id_in_dictionary(result, line)
 				else:
-					case_node_is_answer_and_question_id_not_yet_in_dictionary(result, line)					
+					case_node_is_answer_and_question_id_not_yet_in_dictionary(result, line)		
+				
+	for key, value in result.iteritems():  					
+		print key, '\t', str(value[0])+','+str(value[1])+','+str(value[2])			
 	
 	return result
 	
@@ -61,8 +64,14 @@ def case_node_is_answer_and_question_id_not_yet_in_dictionary(dictionary, line):
 def bad_question_id(question_id):
 	return question_id.isdigit() == False	#this takes out letters and negative numbers ('-' is not a digit)
 		
-if __name__ == "__main__":		
-	fileLocation = '../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt'
-	with open(fileLocation) as csvfile:
-		reader = csv.reader(csvfile, delimiter='\t')
-		mapper(reader)
+if __name__ == "__main__":
+	reader = csv.reader(sys.stdin, delimiter='\t')
+	mapper(reader)
+	
+	#for line in sys.stdin:
+	#	print line
+	
+	#fileLocation = '../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt'
+	#with open(fileLocation) as csvfile:
+	#	reader = csv.reader(csvfile, delimiter='\t')
+	#	mapper(reader)

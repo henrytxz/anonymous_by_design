@@ -1,3 +1,0 @@
-"id"	"title"	"tagnames"	"author_id"	"body"	"node_type"	"parent_id"
-"2312"	"Feedback on Audio Quality"	"cs101 production audio"	"100005361"	"<p>We are looking for feedback on the audio in our videos. Tell us what you think and try to be as <em>specific</em> as possible.</p>"	"question"	"\N"	""	""	""	""	""	""	""	""	""	""	""	""
-"0"	"Mock up ans"	"no tag"	"no author_id"	"body: answer whose question_id_in_dict"	"answer"	"2312"	""	""	""	""	""	""	""	""	""	""	""	""

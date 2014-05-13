@@ -1,44 +1,41 @@
 #!/usr/bin/env python
 
 import sys
-import csv
-import fileinput
-from processAuthor import processAuthor
-from processHr import processHr
+#import csv
+#import fileinput
 
-def initVars():
-	return [0,[],0,0,None,None]
+'''Write a map reduce program that would process the forum_node data and output the length of the post and the average answer 
+(just answer, not comment) length for each post. '''
 
-def initOldAuthor(lineCount,author,hr):
-	lineCount+=1
-	return [lineCount,author,hr]
-
-def reducer(f):
-	lineCount,maxHr,maxHrCount,currHrCount,oldAuthor,author = initVars()
-	for line in f: 
-	#sys.stdin:
-		data = line.strip().split()
-		if len(data)!=2:
+def reducer():
+	#d = {2312: [133, 1, 38], 1234: [25, 2, 12], 5339: [10, 0, 0]}
+		
+	for line in sys.stdin:
+		data_mapped = line.strip().split("\t")
+		if len(data_mapped) != 2:
+			# Something has gone wrong. Skip this line.
 			continue
-		author,hr = data
-
-		if lineCount==0:
-			lineCount,oldAuthor,oldHr = initOldAuthor(lineCount,author,hr)
-
-		oldAuthor,maxHr,maxHrCount,currHrCount,oldHr = processAuthor(oldAuthor,author,maxHr,maxHrCount,currHrCount,oldHr,hr)
 		
-		if currHrCount!=0: #only 0 right after seeing a new author
-			oldHr,maxHr,maxHrCount,currHrCount = processHr(oldHr,hr,maxHr,maxHrCount,currHrCount)
+		questionId, tripletStr = data_mapped 
+		#print tripletStr
 		
-		currHrCount+=1		
+		triplet = tripletStr.split(',')
+		#print triplet
+		#print triplet[0]
+		numberOfAns = int(triplet[1])
+		sumOfAnsLength = int(triplet[2])
+		aveAnsLength = calcAveAnsLength(numberOfAns, sumOfAnsLength)
 		
-	processAuthor(oldAuthor,'',maxHr,maxHrCount,currHrCount,oldHr,hr)	
+		print questionId, "\t", aveAnsLength
+	
+	print '-'*70
 		
-#########################################################################
-f=open('./testReducerInput.txt', 'r')
-#f=open('./debugInput.txt', 'r')
-reducer(f)
+def calcAveAnsLength(numberOfAns, sumOfAnsLength):
+	if numberOfAns == 0:
+		return 0
+	else:
+		return sumOfAnsLength/numberOfAns
 
-
-
+if __name__ == "__main__":
+	reducer()
 
