@@ -1,16 +1,38 @@
-'''			
-'''
-from top_tags.mapper_top_tags import py
-import unittest
-import csv
-import subprocess
+#!/usr/bin/env python
 
-class reducer_q_and_a_test(unittest.TestCase):
-	
-	returncode = subprocess.call(["ls", "-l"])
-	
-	#I haven't gotten the above idea to work on Windows 7 yet
-	#but ran
-	#cat ../testing/shared_data/bigger_node_test.txt | py.py | sort | reducer_q_and_a.py | wc -l
-	#while in ~/Documents/GitHub/foo/final_project/post_and_answer_length
-	#and result looks ok
+import sys
+import operator
+#import csv
+#import fileinput
+
+'''Write a mapreduce program that would output Top 10 tags, ordered by the number of questions they appear in. 
+'''
+
+def reducer():
+
+	d = {}
+	#top10 = []
+		
+	for line in sys.stdin:
+		data_mapped = line.strip().split("\t")
+		if len(data_mapped) != 2:
+			# Something has gone wrong. Skip this line.
+			continue
+		
+		tag, numberAppearanceStr = data_mapped
+		numberAppearance = int(numberAppearanceStr)
+		if tag in d:
+			d[tag] = d[tag]+numberAppearance
+		else:
+			d[tag] = numberAppearance
+			
+	sorted_d = sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
+		
+	for a_tuple in sorted_d:
+		print a_tuple[0], '\t', a_tuple[1]	
+			
+	#print '-'*70
+
+if __name__ == "__main__":
+	reducer()
+

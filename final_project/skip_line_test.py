@@ -5,7 +5,7 @@ testing the following:
 2.
 				
 '''
-import skip_line
+from final_project import skip_line
 import unittest
 import csv
 

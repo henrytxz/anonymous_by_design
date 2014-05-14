@@ -24,7 +24,8 @@ def reducer():
 		#print triplet[0]
 		numberOfAns = int(triplet[1])
 		sumOfAnsLength = int(triplet[2])
-		aveAnsLength = calcAveAnsLength(numberOfAns, sumOfAnsLength)
+		aveAnsLength = calcAveAnsLength(numberOfAns, sumOfAnsLength)	#todo: 14 May 2014, this needs to be improved, what if there's more than 1 mapper? then the same question_id need
+																		#					to be added before dividing
 		
 		print questionId, "\t", aveAnsLength
 	

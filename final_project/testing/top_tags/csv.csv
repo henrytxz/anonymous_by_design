@@ -1,0 +1,10 @@
+id,title,tagnames,author_id,body,node_type,parent_id,
+5339,Whether pdf of Unit and Homework is available?,cs101 pdf,100000458,empty body,question,\N,
+1234,Mock up question,cs387 ,no author_id,body of a random question,question,\N,
+0,Mock up ans,cs387 ,no author_id,body abc,answer,1234,
+0,Mock up comment,cs387 ,no author_id,body abc,comment,1234,
+2312,Feedback on Audio Quality,cs101 production audio,100005361,<p>We are looking for feedback on the audio in our videos. Tell us what you think and try to be as <em>specific</em> as possible.</p>,question,\N,
+0,Mock up ans,no tag,no author_id,body: answer whose question_id_in_dict,answer,2312,
+0,Mock up ans,no tag,no author_id,body,answer,1234,
+0,Mock up ans,no tag,no author_id,body: answer non_int_question_id,answer,deliberated not an integer,
+0,Mock up ans,no tag,no author_id,body: answer negative question_id,answer,-1,just a comment saying that mapper_q_and_a.py handles negative numbers by using isdigit()

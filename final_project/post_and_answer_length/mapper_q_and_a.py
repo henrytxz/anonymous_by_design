@@ -3,6 +3,7 @@
 import sys
 import csv
 
+#from final_project import skip_line
 import skip_line
 
 def mapper(reader):

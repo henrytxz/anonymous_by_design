@@ -3,7 +3,9 @@
 import sys
 import csv
 
-import skip_line
+#from final_project.skip_line import skip_line 	#this works in Eclipse but not Git Bash => just copy skip_line to the same folder and move on for now
+from skip_line import skip_line 
+#import final_project.skip_line
 
 def mapper(reader):
 	#print reader
@@ -13,7 +15,7 @@ def mapper(reader):
 	for line in reader:
 		#print line
 		#print len(line)
-		if skip_line.skip_line(line, 19):
+		if skip_line(line, 19):
 			continue
 		else:
 			node_type = line[5]
@@ -32,13 +34,12 @@ def mapper(reader):
 				else:
 					case_node_is_answer_and_question_id_not_yet_in_dictionary(result, line)		
 				
-	#for key, value in result.iteritems():  					
-	#	print key, '\t', str(value[0])+','+str(value[1])+','+str(value[2])			
+	for key, value in result.iteritems():  					
+		print key, '\t', value			
 	
 	return result
 	
 def case_node_is_question(dictionary, line):
-		#question_id = int(line[0])
 		tagnames = line[2].split()
 		for tag in tagnames:
 			if tag in dictionary:
