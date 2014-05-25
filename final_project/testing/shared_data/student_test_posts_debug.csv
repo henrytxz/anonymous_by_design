@@ -1,0 +1,24 @@
+id	title	tagnames	author_id	body	node_type	parent_id	abs_parent_id	added_at	score	state_string	last_edited_id	last_activity_by_id	last_activity_at	active_revision_id	extra	extra_ref_id	extra_count	marked
+111	Why can't I watch video udacity?	video cs101 meta bug issues nationalities	100000066	<p>I am come from china.How to?</p>	question	\N	\N	2012-02-21 05:08:03.824261+00	0		100075539	100000239	2012-02-22 21:36:17.077627+00	100013171	\N	\N	1214	f
+2	Welcome to the Udacity CS101 Forum!	cs101 welcome	100000005	<p>Welcome to the Udacity CS101 Discussion Forum! I hope you're all excited to learn about computer science and how to build a search engine!</p>	question	\N	\N	2012-02-20 01:36:05.717881+00	16		\N	100006869	2012-02-28 18:47:08.806379+00	2	\N	\N	861	f
+3848		cs101 number strings homework	100000066	<p>Why we count ''0'' for <strong>start</strong> instead of ''1'' and ''-1'' for the <strong>stop</strong> instead of ''0''. Seems more logical don't you thing?</p>	answer	3778	3778	2012-02-23 01:03:07.15577+00	1		\N	100000691	2012-02-24 10:29:33.377435+00	4965	\N	\N	280	f
+66193	Have the courses cs212,  cs253,  and cs262 started yet?	cs101 cs212 cs262 cs253 discussion meta welcome lessons	100007808	<p>Today is  4/16/12,  have the courses gone live yet?  </p>	question	\N	\N	2012-04-16 12:36:08.043022+00	0	(closed)	208069	100007808	2012-04-16 12:49:23.453084+00	87554	\N	\N	680	t
+66199		cs101 	100004467	<p>Not yet, hopefully soon ...</p>	answer	66193	66193	2012-04-16 12:39:40.572717+00	0		\N	100004467	2012-04-16 12:39:40.572717+00	87560	\N	\N	0	f
+66196		cs101 	100071170	"<p>Officially not, supposed to be it will be opened at GMT 17.00 today, but you can still access cs262 <a href=""""http://www.udacity.com/view#Course/cs262/CourseRev/apr2012/Unit/3001/Nugget/5001"""" rel=""""nofollow"""">http://www.udacity.com/view#Course/cs262/CourseRev/apr2012/Unit/3001/Nugget/5001</a> </p>"	answer	66193	66193	2012-04-16 12:38:40.377037+00	0		\N	100000957	2012-04-16 12:38:40.377037+00	87557	\N	\N	0	f
+66195		cs101 	100002460	"<p>kinda, see <a href=""""http://www.udacity-forums.com/cs101/questions/65906/cs253-cs262-cs387-quizzes-and-some-videos-for-unit-1-now-available"""" rel=""""nofollow"""">http://www.udacity-forums.com/cs101/questions/65906/cs253-cs262-cs387-quizzes-and-some-videos-for-unit-1-now-available</a></p>"	answer	66193	66193	2012-04-16 12:38:31.611927+00	0		\N	100003934	2012-04-16 12:38:31.611927+00	87556	\N	\N	0	f
+6012754	Official Deadlines Homeworks	cs253 hw2-1 homework deadlines	100004819	"<p>I would like to know when is the deadline of every homework?</p>
+<p>I thought were every tuesday as CS101 course, and today I realize that solutions of homework 2 has been released.</p>
+<p>I am aware about the deadlines are not so strict as last course CS101, but I would like to deliver every homework at time stablished by the course.</p>
+<p>Thanks in advance!</p>"	question	\N	\N	2012-05-01 04:44:44.410042+00	1	(wiki)	\N	100004823	2012-05-01 05:24:19.434785+00	6015840	\N	\N	362	f
+6011209		cs253 	100010128	"<p>i is out of range</p>
+<pre><code>for i in range(0, len(nor)):
+    norm = norm + nor[i]
+    rot = rot+ro[i]
+</code></pre>
+<p>for example, nor=""123"",len=3, than range is 0,1,2,3, but you have only 3 letters in rot.</p>"	answer	6011204	6011204	2012-04-29 14:45:19.216809+00	1		\N	100010128	2012-04-29 14:45:19.216809+00	6013891	\N	\N	0	f
+6011208		cs253 	100071170	"<pre><code>s=""abc""
+print s[4]
+</code></pre>
+<p>Will also give string index out of range. You are trying to access an index of a string which is not there.</p>"	answer	6011204	6011204	2012-04-29 12:44:14.449528+00	1		\N	100001071	2012-04-29 12:44:14.449528+00	6013889	\N	\N	0	f
+6012771		cs253 	100012200	"<p>The solution videos will be posted Monday 23:59 UTC, so just before midnight that night. The first week's solution videos were posted one day late because the homework itself was posted one day late, and we wanted to give people a full week before posting the solution videos. Hope this helps!<br>
+And again, just to reiterate, there is absolutely no penalty for submitting after the solution videos are up.</p>"	answer	6012754	6012754	2012-05-01 05:24:19.434785+00	3	(accepted)	\N	100012200	2012-05-01 05:24:19.434785+00	6015861	\N	\N	0	t

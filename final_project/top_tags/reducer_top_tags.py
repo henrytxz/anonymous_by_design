@@ -28,7 +28,9 @@ def reducer():
 			
 	sorted_d = sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
 		
-	for a_tuple in sorted_d:
+	top10 = sorted_d[:10]	
+		
+	for a_tuple in top10:
 		print a_tuple[0], '\t', a_tuple[1]	
 			
 	#print '-'*70

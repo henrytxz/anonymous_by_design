@@ -10,7 +10,7 @@ import unittest
 #import csv
 import subprocess
 
-class reducer_top_tags_test(unittest.TestCase):
+#class reducer_top_tags_test(unittest.TestCase):
 	
 	#returncode = subprocess.call(["ls", "-l"])
 	

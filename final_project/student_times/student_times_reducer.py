@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import sys
-import csv
-import fileinput
+#import csv
+#import fileinput
 from processAuthor import processAuthor
 from processHr import processHr
 
@@ -16,7 +16,6 @@ def initOldAuthor(lineCount,author,hr):
 def reducer(f):
 	lineCount,maxHr,maxHrCount,currHrCount,oldAuthor,author = initVars()
 	for line in f: 
-	#sys.stdin:
 		data = line.strip().split()
 		if len(data)!=2:
 			continue
@@ -33,12 +32,9 @@ def reducer(f):
 		currHrCount+=1		
 		
 	processAuthor(oldAuthor,'',maxHr,maxHrCount,currHrCount,oldHr,hr)	
-		
-#########################################################################
-f=open('./testReducerInput.txt', 'r')
-#f=open('./debugInput.txt', 'r')
-reducer(f)
 
+if __name__ == "__main__":
+	reducer(sys.stdin)
 
 
 
