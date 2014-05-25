@@ -3,10 +3,10 @@
 import sys
 import csv
 
-from skip_line import skip_line 
+#from skip_line import skip_line 
 
-def mapper(reader):
-
+def reducer (reader):
+	
 	'''
 	We might want to help students form study groups. But first we want to see if there are already students on forums that communicate a lot between themselves.
 	
@@ -18,31 +18,26 @@ def mapper(reader):
 	Key question_id, value author_id
 	'''
 	
-	#result = {}
-	#i=1
+	result = {} # the key of this dictionary will be question_ids and value list of author_ids  
 
 	for line in reader:
-		if skip_line(line, 19):
+		data = line.strip().split()
+		if len(data)!=2:
 			continue
-		else:
-			node_type = line[5]
-			
-			if node_type == 'question': 
-				question_id = line[0]
-				author_id 	= line[3]
-			elif node_type == 'answer' or node_type == 'comment' :
-				author_id 	= line[3]
-				question_id = line[7]	#the abs_parent_id
-				
-			print question_id, '\t', author_id
-				
+		question_id, author_id = data
 		
-		#print line
-		#print str(i)+":"
-		#i+=1
-		#print len(line)
+		if question_id in result:
+			result[question_id].append(author_id) 
+		else:
+			result[question_id] = [author_id]
+	
+	#print result
+		
+	for key, value in result.iteritems():
+		print key, '\t', value
 
 				
 if __name__ == "__main__":
-	reader = csv.reader(sys.stdin, delimiter='\t')
-	mapper(reader)
+	#reader = csv.reader(sys.stdin, delimiter='\t')
+	#reducer(reader)
+	reducer(sys.stdin)

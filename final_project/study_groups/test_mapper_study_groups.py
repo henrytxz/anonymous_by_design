@@ -1,11 +1,4 @@
 '''
-testing the following:
-1. case_node_is_question inserts correct question_id, question_len, number_of_ans==0 and ans_len_sum==0 
-   if seeing the question_id before an ans
-
-todo: to finish documenting
-2.
-				
 '''
 import study_groups_mapper
 import unittest
