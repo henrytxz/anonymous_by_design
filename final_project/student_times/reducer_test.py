@@ -16,6 +16,9 @@ class mapper_top_tags_test(unittest.TestCase):
 		self.assertFalse(student_times_reducer.findMaxHr({}))
 		
 		######################################################
+		d = {'10': 1, '04': 2, '05': 1}
+		student_times_reducer.findMaxHr(d)
+		
 		# for author 100000066 
 		d = {'01': 1, '05': 2}
 		self.assertEqual(['05'], student_times_reducer.findMaxHr(d))

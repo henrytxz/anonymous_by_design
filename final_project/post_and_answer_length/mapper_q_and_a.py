@@ -3,18 +3,14 @@
 import sys
 import csv
 
-#from final_project import skip_line
 import skip_line
 
 def mapper(reader):
-	#print reader
 
 	result = {}
 
 	for line in reader:
-		#print line
-		#print len(line)
-		if skip_line.skip_line(line, 19):
+		if skip_line.skip_line(line, 19):	#skip bad rows
 			continue
 		else:
 			node_type = line[5]
@@ -49,7 +45,7 @@ def case_node_is_question(dictionary, line):
 
 def case_node_is_answer_and_question_id_in_dictionary(dictionary, line):
 		question_id = int(line[6])
-		value = dictionary[question_id]	#print value
+		value = dictionary[question_id]
 		question_len = value[0]
 		number_of_ans = value[1]+1
 		ans_len_sum = value[2]+len(line[4])
@@ -68,11 +64,3 @@ def bad_question_id(question_id):
 if __name__ == "__main__":
 	reader = csv.reader(sys.stdin, delimiter='\t')
 	mapper(reader)
-	
-	#for line in sys.stdin:
-	#	print line
-	
-	#fileLocation = '../testing/post_and_answer_length/data/data_test_node_type_ans_yet_key_not_found.txt'
-	#with open(fileLocation) as csvfile:
-	#	reader = csv.reader(csvfile, delimiter='\t')
-	#	mapper(reader)

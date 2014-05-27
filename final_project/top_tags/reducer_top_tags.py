@@ -2,16 +2,14 @@
 
 import sys
 import operator
-#import csv
-#import fileinput
 
-'''Write a mapreduce program that would output Top 10 tags, ordered by the number of questions they appear in. 
+'''
+Write a mapreduce program that would output Top 10 tags, ordered by the number of questions they appear in. 
 '''
 
 def reducer():
 
 	d = {}
-	#top10 = []
 		
 	for line in sys.stdin:
 		data_mapped = line.strip().split("\t")
@@ -25,7 +23,10 @@ def reducer():
 			d[tag] = d[tag]+numberAppearance
 		else:
 			d[tag] = numberAppearance
-			
+	
+	#creates a list, key=operator.itemgetter(1) will sort by value
+	#if one wants to sort by key, you'd use key=operator.itemgetter(0)
+	#set reverse=True because I want descending order in frequency
 	sorted_d = sorted(d.iteritems(), key=operator.itemgetter(1), reverse=True)
 		
 	top10 = sorted_d[:10]	
@@ -33,7 +34,6 @@ def reducer():
 	for a_tuple in top10:
 		print a_tuple[0], '\t', a_tuple[1]	
 			
-	#print '-'*70
 
 if __name__ == "__main__":
 	reducer()

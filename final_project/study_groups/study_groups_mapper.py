@@ -18,9 +18,6 @@ def mapper(reader):
 	Key question_id, value author_id
 	'''
 	
-	#result = {}
-	#i=1
-
 	for line in reader:
 		if skip_line(line, 19):
 			continue
@@ -36,12 +33,6 @@ def mapper(reader):
 				
 			print question_id, '\t', author_id
 				
-		
-		#print line
-		#print str(i)+":"
-		#i+=1
-		#print len(line)
-
 				
 if __name__ == "__main__":
 	reader = csv.reader(sys.stdin, delimiter='\t')

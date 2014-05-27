@@ -8,13 +8,10 @@ from skip_line import skip_line
 #import final_project.skip_line
 
 def mapper(reader):
-	#print reader
 
 	result = {}
 
 	for line in reader:
-		#print line
-		#print len(line)
 		if skip_line(line, 19):
 			continue
 		else:

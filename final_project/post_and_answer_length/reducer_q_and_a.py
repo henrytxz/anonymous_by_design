@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
 import sys
-#import csv
-#import fileinput
 
-'''Write a map reduce program that would process the forum_node data and output the length of the post and the average answer 
-(just answer, not comment) length for each post. '''
+'''
+Write a map reduce program that would process the forum_node data and output the length of the post and the average answer 
+(just answer, not comment) length for each post.
+'''
 
 def reducer():
-	#d = {2312: [133, 1, 38], 1234: [25, 2, 12], 5339: [10, 0, 0]}
+	
+	d = {}	
 		
 	for line in sys.stdin:
 		data_mapped = line.strip().split("\t")
@@ -17,19 +18,29 @@ def reducer():
 			continue
 		
 		questionId, tripletStr = data_mapped 
-		#print tripletStr
 		
 		triplet = tripletStr.split(',')
-		#print triplet
-		question_len = int(triplet[0])
-		numberOfAns = int(triplet[1])
-		sumOfAnsLength = int(triplet[2])
-		aveAnsLength = calcAveAnsLength(numberOfAns, sumOfAnsLength)	#todo: 14 May 2014, this needs to be improved, what if there's more than 1 mapper? then the same question_id need
-																		#					to be added before dividing
+		question_len 	= int(triplet[0])
+		numberOfAns 	= int(triplet[1])
+		sumOfAnsLength 	= int(triplet[2])
+		
+		if questionId in d:
+			numberOfAnsSoFar 	= d[questionId][1]
+			sumOfAnsLengthSoFar = d[questionId][2] 
+			d[questionId] = [question_len, numberOfAnsSoFar+numberOfAns, sumOfAnsLengthSoFar+sumOfAnsLength]
+		else:
+			d[questionId] = [question_len, numberOfAns, sumOfAnsLength]
+		
+	#iterate through the dictionary whose key is questionId and value [question_len, numberOfAns, sumOfAnsLength]		
+	for key, value in d.iteritems():
+		questionId = key
+		question_len 	= value[0]
+		numberOfAns 	= value[1]
+		sumOfAnsLength 	= value[2]
+		aveAnsLength = calcAveAnsLength(numberOfAns, sumOfAnsLength)	
 		
 		print questionId, '\t', question_len, '\t', aveAnsLength
 	
-	#print '-'*70
 		
 def calcAveAnsLength(numberOfAns, sumOfAnsLength):
 	if numberOfAns == 0:

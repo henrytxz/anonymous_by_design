@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-import csv
-
-#from skip_line import skip_line 
 
 def reducer (reader):
 	
@@ -30,14 +27,10 @@ def reducer (reader):
 			result[question_id].append(author_id) 
 		else:
 			result[question_id] = [author_id]
-	
-	#print result
-		
+			
 	for key, value in result.iteritems():
 		print key, '\t', value
 
 				
 if __name__ == "__main__":
-	#reader = csv.reader(sys.stdin, delimiter='\t')
-	#reducer(reader)
 	reducer(sys.stdin)
