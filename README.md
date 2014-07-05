@@ -3,9 +3,9 @@ Intro-to-Hadoop-and-MapReduce
 
 hey guys,
 
-i'm gonna package some code i've already written for a Hadoop and MapReduce class and make it as easy to use for people as possible
+i'm gonna package some code i' wrote for a Hadoop and MapReduce class and make it as easy to use for people as possible
 the program takes a flat data file
-let's say the columns are
+the columns are
 
 id	title	tagnames	author_id	body	node_type	parent_id	abs_parent_id	added_at	score
 
@@ -30,4 +30,5 @@ luckily i have a few gig of Udacity forum data so i have something :)
 but it would be nice if this can be used to analyze any forum
 
 suggestions?
-i haven't thought much about 
+how to be more flexible taking input in?
+
