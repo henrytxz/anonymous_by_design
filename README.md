@@ -1,34 +1,17 @@
-Intro-to-Hadoop-and-MapReduce
-=============================
+Welcome!
 
-hey guys,
+This repo contains some MapReduce code. It is so named so it's not clear which class is this for. If you're taking this class, please remember that you signed the honor code.
 
-i'm gonna package some code i' wrote for a Hadoop and MapReduce class and make it as easy to use for people as possible
-the program takes a flat data file
-the columns are
+Sample data can be found in foo/final_project/testing/shared_data/ 
 
-id	title	tagnames	author_id	body	node_type	parent_id	abs_parent_id	added_at	score
+- foo/final_project/student_times 
+finds the most active forum user for each hour. Users of this forum are from around the world => this can be useful if the forum hosting site wants to appoint a forum moderator for a given time slot.
 
-where 
-id is the id of a thread
-title is the title of a thread, 
-node_type can be question, answer or comment
-added_at is the time of a node's creation
+- foo/final_project/post_and_answer_length 
+computes statistics such as the correlation between the length of questions and the average length of answers
 
-and finds 
-- the most active forum user for each hour because users of this forum are from around the world => this can be useful if I'm Udacity and I want to find a forum moderator for the midnight to 8am EST time slot, for eg
-- compute statistics such as the correlation between the length of questions and the average length of answers
-- find the top n tags, find the most active users given a tag
-- for each forum thread, a list of users who posted there => if one wants, I guess one can draw a social graph
-- find the most used word in the forum or one of its subforums
+- foo/final_project/top_tags
+finds the top n tags
 
-i can use it to analyze any forum that I'm interested in, although i do not yet know 
-- if i will be able to get data of a forum
-- if the data will be in a similar form to the columns above (tho i suppose i can always transform data once i get them)
-
-luckily i have a few gig of Udacity forum data so i have something :)
-but it would be nice if this can be used to analyze any forum
-
-suggestions?
-how to be more flexible taking input in?
-
+- foo/final_project/study_groups 
+finds for each forum thread, a list of users who posted there
